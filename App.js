@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 
 import BasicHouse from './components/house'
 import InfoCard from './components/InfoCard'
+import AppointmentBook from './components/AppointmentBook'
 
 const homes = [['https://tse3.mm.bing.net/th?id=OIP.rsF_ZLLGR1-jwSZ88eiZwwHaFC&pid=15.1&P=0&w=197&h=134',
 "1515 Polar Bear Drive Fantastic City, Best State", "$250,000","2000","3","3"],
@@ -15,10 +16,19 @@ const homes = [['https://tse3.mm.bing.net/th?id=OIP.rsF_ZLLGR1-jwSZ88eiZwwHaFC&p
 export default class App extends React.Component {
   constructor(props){
     super();
-    this.state = {houses:homes}
+    this.state = {houses:homes, hideAppointmentBook: true}
+  }
+
+  showAppointmentBook = () => {
+    this.setState(previousState => (
+        { hideAppointmentBook: !previousState.hideAppointmentBook }
+      ))
+
+    console.log("Appointment book is " + this.state.hideAppointmentBook);
   }
   
   render() {
+    if(this.state.hideAppointmentBook) {
     return (
       <ScrollView style={styles.houseListing} horizontal> 
         {
@@ -29,6 +39,7 @@ export default class App extends React.Component {
               address={listing[1]} />
        
             <InfoCard
+              openAppointmentBook = {this.showAppointmentBook}
               price={listing[2]}
               squareFeet={listing[3]}
               beds={listing[4]} 
@@ -36,8 +47,15 @@ export default class App extends React.Component {
           </View>
           ))
         }      
-      </ScrollView>
+      </ScrollView> 
     );
+    }
+    else {
+      return(
+        <AppointmentBook 
+          openAppointmentBook = {this.showAppointmentBook} />
+      );
+    }
   }
 }
 

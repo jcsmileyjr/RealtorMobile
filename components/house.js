@@ -17,6 +17,7 @@ export default function BasicHouse(props) {
 const styles = StyleSheet.create({
   basicHouseContainer: {
     //flex: 1,
+    backgroundColor: "lightblue"
   },
   centerPicture:{
     alignItems: 'center',
