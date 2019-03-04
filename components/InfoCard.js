@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity} from 'react-native';
 
 export default function InfoCard(props){
   return(
@@ -20,11 +20,11 @@ export default function InfoCard(props){
         <Text style={styles.titleColor}>"Number of baths:"</Text>
         <Text style={styles.textOnRightSide}> {props.baths}</Text>
       </View>
-      <View style={styles.appointmentButtonStyle}>
-        <Button
-          onPress = {props.openAppointmentBook}
-          title="Set an Appointment"/>    
-      </View>  
+      <TouchableOpacity style={styles.buttonContainer} onPress = {props.openAppointmentBook}>
+        <View style={styles.button}>
+          <Text style={styles.buttonText}>Set an Appointment</Text>    
+        </View>
+      </TouchableOpacity>  
     </View>
   );
 }
@@ -33,15 +33,12 @@ const styles = StyleSheet.create({
   infoCardContainer:{
     flex: 1,
     alignSelf: "stretch",
-    marginTop: 20,
+    //marginTop: 20,
   },
   titleColor: {
     color: "blue",
     textAlign: "left",
     fontSize: 16,
-  },
-  appointmentButtonStyle: {
-    marginTop: 5,
   },
   details:{
     flexDirection: "row",
@@ -51,6 +48,20 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf:"stretch",
     textAlign:"right",
-        fontSize: 18,
+    fontSize: 18,
+  },
+  button: {
+    width: 200,
+    alignItems: 'center',
+    backgroundColor: '#2196F3'
+  },
+  buttonText: {
+    padding: 20,
+    color: 'white',
+    fontSize: 16,
+  },
+  buttonContainer:{
+    alignItems: "center",
+    marginTop: 10,
   }
 });
