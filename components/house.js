@@ -6,7 +6,7 @@ export default function BasicHouse(props) {
     <ScrollView style={styles.basicHouseContainer}>
       <View style={styles.centerPicture}>
         <Image source={{uri:props.housePicture }}
-       style={{width: 250, height: 300, marginRight: 10 }} />
+       style={{width: 300, height: 300, marginRight: 10 }} />
       </View>       
       <Text style={styles.setTheWidth}>{props.address}</Text>
     
@@ -16,8 +16,8 @@ export default function BasicHouse(props) {
 
 const styles = StyleSheet.create({
   basicHouseContainer: {
-    //flex: 1,
-    backgroundColor: "lightblue"
+    flex: 1,
+    paddingBottom: 150,
   },
   centerPicture:{
     alignItems: 'center',
@@ -27,5 +27,6 @@ const styles = StyleSheet.create({
   setTheWidth:{
     width:240,
     color: "blue",
+    fontSize: 16,
   }
 });
