@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, Image, ScrollView } from 'react-native';
 import BasicHouse from './components/house'
 import InfoCard from './components/InfoCard'
 import AppointmentBook from './components/AppointmentBook'
+import Appointment from './components/Appointment'
 
 const homes = [['https://tse3.mm.bing.net/th?id=OIP.rsF_ZLLGR1-jwSZ88eiZwwHaFC&pid=15.1&P=0&w=197&h=134',
 "1515 Polar Bear Drive Fantastic City, Best State", "$250,000","2000","3","3"],
@@ -16,19 +17,23 @@ const homes = [['https://tse3.mm.bing.net/th?id=OIP.rsF_ZLLGR1-jwSZ88eiZwwHaFC&p
 export default class App extends React.Component {
   constructor(props){
     super();
-    this.state = {houses:homes, hideAppointmentBook: true}
+    this.state = {houses:homes, hideAppointmentBook: true, hideAppointments: true}
   }
 
   showAppointmentBook = () => {
     this.setState(previousState => (
         { hideAppointmentBook: !previousState.hideAppointmentBook }
       ))
-
-    console.log("Appointment book is " + this.state.hideAppointmentBook);
   }
+
+  showAppointments = () => {
+    this.setState(previousState => (
+        { hideAppointments: !previousState.hideAppointments }
+      ))
+  }  
   
   render() {
-    if(this.state.hideAppointmentBook) {
+    if(this.state.hideAppointmentBook && this.state.hideAppointments) {
     return (
       <ScrollView style={styles.houseListing} horizontal> 
         {
@@ -50,13 +55,19 @@ export default class App extends React.Component {
       </ScrollView> 
     );
     }
-    else {
+    else if(!this.state.hideAppointmentBook && this.state.hideAppointments ) {
       return(
         <AppointmentBook 
-          openAppointmentBook = {this.showAppointmentBook} />
+          openAppointmentBook = {this.showAppointmentBook}
+          openAppointments = {this.showAppointments} />
       );
+    }//else statement for AppointmentBook closing bracker
+    else {
+      return(
+        <Appointment />
+      )
     }
-  }
+  }//render closing bracket
 }
 
 const styles = StyleSheet.create({

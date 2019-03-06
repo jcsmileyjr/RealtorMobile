@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
-
-
 export default function AppointmentBook(props){
   return (
     <View style= {styles.appointmentContainer}>
@@ -35,11 +33,20 @@ export default function AppointmentBook(props){
           onChangeText = {props.openAppointmentBook} 
           />
       </View>                  
-      <TouchableOpacity style={styles.buttonContainer} onPress = {props.openAppointmentBook}>
-        <View style={styles.button}>
+      <TouchableOpacity 
+        style={styles.buttonContainer} 
+        onPress = {props.openAppointmentBook}>
+        <View style={styles.finishButton}>
           <Text style={styles.buttonText}>Finish</Text>    
         </View>
-      </TouchableOpacity>        
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.buttonContainer} 
+        onPress = {props.openAppointments}>
+        <View style={styles.appointmentBookButton}>
+          <Text style={styles.buttonText}>Appointment Book</Text>    
+        </View>
+      </TouchableOpacity>              
     </View>
   );
 }
@@ -66,10 +73,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "blue"
   },
-  button: {
+  finishButton: {
     width: 200,
     alignItems: 'center',
-    backgroundColor: '#2196F3'
+    backgroundColor: '#2196F3',    
+  },
+  appointmentBookButton: {
+    width: 200,
+    alignItems: 'center',
+    backgroundColor: '#006400',    
   },
   buttonText: {
     padding: 20,
