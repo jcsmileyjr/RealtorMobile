@@ -1,8 +1,6 @@
 # Realtor Mobile
 <hr>
 
-/*![Screen-shot of app in use](gif/Calculator.gif) */
-
 ### Table of Contents
 1. Purpose
 2. Motivation
@@ -22,7 +20,7 @@ This project was used to practice developing with React Native and wire-framing 
 * The realtor can view their list of appointments. 
 
 ### WireFrame
-/*![Screen-shot of Wireframe in use](gif/Calculator.gif) */
+![Screen-shot of Wireframe in use](assets/wireframes/Realtor-Wireframe.PNG)
 
 ### This app was built with the following technologies:
 **React Native:** JavaScript mobile app framework 
