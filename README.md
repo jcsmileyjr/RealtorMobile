@@ -1,13 +1,40 @@
-# Sample Snack app
+# Realtor Mobile
+<hr>
 
-Welcome to Expo!
+### Table of Contents
+1. Purpose
+2. Motivation
+3. Objectives
+4. Wireframe
+5. Technologies Used
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by clicking the **Run** button or use the simulator by clicking **Tap to Play**. When you're done, click **Save** and share the link!
+### Purpose:
+A realty app that showcase homes for sales and creates an appointment to meet the realtor. 
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Export** your project and use it with [expo-cli](https://docs.expo.io/versions/latest/introduction/installation.html).
+### Motivation:
+This project was used to practice developing with React Native and wire-framing with Adobe XD.  
 
-Projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the **Embed** button.
+### Objectives:
+* The user can scroll through pictures of homes and details about the home.
+* The user can make an appointment with the realtor for the house chosen. 
+* The realtor can view their list of appointments. 
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.io).
+### WireFrame
+![Screen-shot of Wireframe in use](assets/wireframes/Realtor-Wireframe.PNG)
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack-web).
+### This app was built with the following technologies:
+**React Native:** JavaScript mobile app framework 
+ 
+**Git-Hub:** Web-based version control repository and Internet hosting service
+ 
+**Flexbox:** A CSS based layout technology for building responsive websites
+
+**Abode XD** A wire-framing tool used to create a mockup/visual of what is to be coded
+  
+**JavaScript:** Object-oriented programming language for web pages
+ 
+**HTML:** Mark-up language for creating web pages 
+ 
+**CSS:** A formatting language for styling web pages
+ 
+*Create by JC Smiley in March of 2019*
