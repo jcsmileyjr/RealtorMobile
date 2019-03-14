@@ -17,23 +17,28 @@ const homes = [['https://tse3.mm.bing.net/th?id=OIP.rsF_ZLLGR1-jwSZ88eiZwwHaFC&p
 export default class App extends React.Component {
   constructor(props){
     super();
-    this.state = {houses:homes, hideAppointmentBook: true, hideAppointments: true}
+    this.state = {
+      houses:homes,
+      hideAppointmentBook: true,   //if false, navigate user to AppointmentBook
+      }
   }
 
+  //method to navigate the user from the home page to the AppointmentBook page
   showAppointmentBook = () => {
     this.setState(previousState => (
         { hideAppointmentBook: !previousState.hideAppointmentBook }
       ))
   }
 
-  showAppointments = () => {
+  //Method to navigate the  user from Appointments page to the main page
+  showMainPage = () => {
     this.setState(previousState => (
-        { hideAppointments: !previousState.hideAppointments }
-      ))
-  }  
+        { hideAppointmentBook: !previousState.hideAppointmentBook }
+      ))      
+  }    
   
   render() {
-    if(this.state.hideAppointmentBook && this.state.hideAppointments) {
+    if(this.state.hideAppointmentBook == true) {
     return (
       <ScrollView style={styles.houseListing} horizontal> 
         {
@@ -42,7 +47,7 @@ export default class App extends React.Component {
             <BasicHouse         
               housePicture={listing[0]}
               address={listing[1]} />
-       
+            <Text>{this.state.fullName}</Text>
             <InfoCard
               openAppointmentBook = {this.showAppointmentBook}
               price={listing[2]}
@@ -55,18 +60,14 @@ export default class App extends React.Component {
       </ScrollView> 
     );
     }
-    else if(!this.state.hideAppointmentBook && this.state.hideAppointments ) {
+    else  {
       return(
         <AppointmentBook 
+          openMainPage = {this.showMainPage}
           openAppointmentBook = {this.showAppointmentBook}
           openAppointments = {this.showAppointments} />
       );
     }//else statement for AppointmentBook closing bracker
-    else {
-      return(
-        <Appointment />
-      )
-    }
   }//render closing bracket
 }
 
