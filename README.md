@@ -1,6 +1,8 @@
 # Realtor Mobile
 <hr>
 
+![gif of app](assets/gif/realtyMobile1.gif)
+
 ### Table of Contents
 1. Purpose
 2. Motivation
