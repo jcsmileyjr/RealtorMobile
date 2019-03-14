@@ -20,7 +20,9 @@ export default function InfoCard(props){
         <Text style={styles.titleColor}>"Number of baths:"</Text>
         <Text style={styles.textOnRightSide}> {props.baths}</Text>
       </View>
-      <TouchableOpacity style={styles.buttonContainer} onPress = {props.openAppointmentBook}>
+      <TouchableOpacity 
+        style={styles.buttonContainer} 
+        onPress = {props.openAppointmentBook}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>Set an Appointment</Text>    
         </View>
